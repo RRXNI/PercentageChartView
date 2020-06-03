@@ -27,6 +27,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Typeface;
+import android.graphics.text.LineBreaker;
 import android.os.Build;
 import android.text.DynamicLayout;
 import android.text.Editable;
@@ -137,7 +138,7 @@ public abstract class BaseModeRenderer {
     RectF mCircleBounds;
     ValueAnimator mProgressColorAnimator, mBackgroundColorAnimator, mTextColorAnimator, mBgBarColorAnimator;
     private ValueAnimator mProgressAnimator;
-    private Interpolator mAnimInterpolator;
+    private final Interpolator mAnimInterpolator;
     int mAnimDuration;
     float mProgress;
     float mStartAngle;
@@ -391,8 +392,8 @@ public abstract class BaseModeRenderer {
             mTextLayout = DynamicLayout.Builder.obtain(mTextEditor, mTextPaint, Integer.MAX_VALUE)
                     .setAlignment(Layout.Alignment.ALIGN_NORMAL)
                     .setLineSpacing(0, 0)
-                    .setJustificationMode(Layout.JUSTIFICATION_MODE_NONE)
-                    .setBreakStrategy(Layout.HYPHENATION_FREQUENCY_NONE)
+                    .setJustificationMode(LineBreaker.JUSTIFICATION_MODE_NONE)
+                    .setBreakStrategy(LineBreaker.BREAK_STRATEGY_SIMPLE)
                     .setIncludePad(false)
                     .build();
         } else {

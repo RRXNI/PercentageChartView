@@ -505,7 +505,6 @@ public class PercentageChartView extends View implements IPercentageChartView {
      *
      * @param interpolator TimeInterpolator instance.
      */
-    @SuppressWarnings("ConstantConditions")
     public void setAnimationInterpolator(@NonNull TimeInterpolator interpolator) {
         animationInterpolator(interpolator);
     }
@@ -563,7 +562,6 @@ public class PercentageChartView extends View implements IPercentageChartView {
      *
      * @param typeface the text font as a Typeface instance
      */
-    @SuppressWarnings("ConstantConditions")
     public void setTypeface(@NonNull Typeface typeface) {
         typeface(typeface);
         postInvalidate();
@@ -870,7 +868,6 @@ public class PercentageChartView extends View implements IPercentageChartView {
      * @param interpolator TimeInterpolator instance.
      * @throws IllegalArgumentException if the given TimeInterpolator instance is null.
      */
-    @SuppressWarnings("ConstantConditions")
     public PercentageChartView animationInterpolator(@NonNull TimeInterpolator interpolator) {
         if (interpolator == null) {
             throw new IllegalArgumentException("Animation interpolator cannot be null");
@@ -910,7 +907,6 @@ public class PercentageChartView extends View implements IPercentageChartView {
      * @param typeface the text font as a Typeface instance
      * @throws IllegalArgumentException if the given typeface is null.
      */
-    @SuppressWarnings("ConstantConditions")
     public PercentageChartView typeface(@NonNull Typeface typeface) {
         if (typeface == null) {
             throw new IllegalArgumentException("Text TypeFace cannot be null");
