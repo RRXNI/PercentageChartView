@@ -31,6 +31,8 @@ import androidx.annotation.Nullable;
 import com.ramijemli.percentagechartview.IPercentageChartView;
 import com.ramijemli.percentagechartview.callback.AdaptiveColorProvider;
 
+import java.util.Arrays;
+
 
 public class PieModeRenderer extends BaseModeRenderer implements OrientationBasedMode, OffsetEnabledMode {
 
@@ -122,6 +124,7 @@ public class PieModeRenderer extends BaseModeRenderer implements OrientationBase
     @Override
     void setupGradientColors(RectF bounds) {
         if (mGradientType == -1 && bounds.height() == 0) return;
+        if (mGradientColors == null) return;
 
         switch (mGradientType) {
             default:

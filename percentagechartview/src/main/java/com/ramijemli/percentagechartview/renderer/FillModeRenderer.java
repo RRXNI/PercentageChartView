@@ -110,6 +110,7 @@ public class FillModeRenderer extends BaseModeRenderer implements OffsetEnabledM
     @Override
     void setupGradientColors(RectF bounds) {
         if (mGradientType == -1 || mGradientType == GRADIENT_SWEEP) return;
+        if (mGradientColors == null) return;
 
         switch (mGradientType) {
             default:
