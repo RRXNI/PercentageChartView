@@ -214,7 +214,11 @@ public class RingModeRenderer extends BaseModeRenderer implements OrientationBas
 
     @Override
     void setupGradientColors(RectF bounds) {
-        if (mGradientType == -1) return;
+        if (mGradientType == -1 || bounds.height() == 0) return;
+
+        println("### DEBUG ###")
+        println("GRADIENTS ${mGradientColors}")
+        println("MGRADIENTS ${mGradientDistributions}")
 
         double ab = Math.pow(bounds.bottom - bounds.centerY(), 2);
         tweakAngle = (float) Math.toDegrees(Math.acos((2 * ab - Math.pow(mProgressBarThickness / 2, 2)) / (2 * ab)));
